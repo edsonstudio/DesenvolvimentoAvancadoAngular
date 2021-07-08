@@ -1,0 +1,38 @@
+<div class="cards">
+	<div class="flip-card" *ngFor="let produto of produtos">
+		<mat-card class="example-card">
+			<mat-card-header>
+				<span class="material-icons gray900">touch_app</span>
+				<div mat-card-avatar class="avatar-header-image"></div>
+				<mat-card-title *ngIf="!produto.promocao">{{ produto.valor | currency:'BRL':symbol:'1.2-2':'pt' }}</mat-card-title>
+				<mat-card-subtitle *ngIf="produto.promocao">De: <del>{{ produto.valor | currency:'BRL':symbol:'1.2-2':'pt' }}</del></mat-card-subtitle>
+				<mat-card-title *ngIf="produto.promocao">Por: {{ produto.valorPromo | currency:'BRL':symbol:'1.2-2':'pt' }}</mat-card-title>
+				<mat-card-subtitle>{{ produto.nome | titlecase }}</mat-card-subtitle>
+			</mat-card-header>
+			<div class="flip-card-inner">
+				<div class="flip-card-front">
+					<img mat-card-image src="assets/{{ produto.imagem }}" alt="{{ produto.nome }}">
+				</div>
+				<div class="flip-card-back">
+					<mat-card-content>
+						<p>{{ produto.descricao }}</p>
+						<div class="conteudo">
+							<button mat-icon-button>
+								<mat-icon>thumb_up_off_alt</mat-icon>
+							</button>
+							<button mat-icon-button>
+								<mat-icon>share</mat-icon>
+							</button>
+							<button mat-icon-button>
+								<mat-icon>favorite_border</mat-icon>
+							</button>
+							<button mat-icon-button [routerLink]="['/produto-detalhe', produto.id]">
+								<mat-icon>zoom_in</mat-icon>
+							</button>
+						</div>
+					</mat-card-content>
+				</div>
+			</div>
+		</mat-card>
+	</div>
+</div>

@@ -1,0 +1,22 @@
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.conteudo {
+    word-wrap: break-word;
+    max-width: 25rem;
+    width: 12.5rem;
+    height: 15.7rem;
+    margin: 1.5rem;
+    padding: 1.25rem;
+    display:flex;
+    flex-direction: column;
+    align-items: center; 
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(19, 10, 0, 0.50);
+}

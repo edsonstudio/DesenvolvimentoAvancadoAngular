@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="conteudo">
+        <h3>Interpolation</h3>
+        <!-- <p>O número de cliques é: {{ contadorClique }}</p> -->
+        <p [ngClass]="">O número de cliques é: {{ contadorClique }}</p>
+        <mat-progress-spinner
+            class="example-margin"
+            [color]="color"
+            [mode]="mode">
+        </mat-progress-spinner>
+    </div>
+    <div class="conteudo">
+        <h3>Property Binding</h3>
+        <button mat-flat-button color="warn" [disabled]="contadorClique >= 10">Info</button><br><br>
+        <img [src]="urlImagem" height="50px" width="50px" />
+    </div>
+    <div class="conteudo">
+        <h3>Event Binding</h3>
+        <button mat-flat-button color="primary" (click)='adicionarClique()'>Clique-me</button><br><br>
+        <button mat-flat-button color="basic" (click)='zerarContador()' [disabled]='contadorClique < 10'>Zerar contador</button><br><br>
+    </div>
+    <div class="conteudo">
+        <h3>Two-way Binding</h3>
+        <!-- <input type="text" (keyup)='KeyUp($event)' placeholder="Digite o seu nome"><br>
+        <label for="">Seu nome é: {{ nome }}</label> -->
+        
+        <!-- <input type="text" [ngModel]="nome" (ngModelChange)='nome = $event' placeholder="Digite o seu nome"><br>
+        <label for="">Seu nome é: {{ nome }}</label> -->
+        
+        <input type="text" [(ngModel)]="nome" placeholder="Digite o seu nome"><br>
+        <label [ngClass]="nome">Seu nome é: {{ nome }}</label>
+    </div>
+</div>

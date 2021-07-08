@@ -1,0 +1,85 @@
+.cards {
+	width: 100%;
+    min-height: 100vh;
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.example-card {
+	max-width: 25rem;
+	margin: 1rem;
+	width: 14.5rem;
+	height: 15.7rem;
+	perspective: 1000px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.avatar-header-image {
+	background-image: url("~src/assets/shop-cart-02.png");
+	background-size: cover;
+	cursor: pointer;
+}
+
+/* This container is needed to position the front and back side */
+
+.flip-card-inner {
+	position: relative;
+	width: 100%;
+	text-align: center;
+	transition: transform 0.8s;
+	transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+
+.flip-card:hover .flip-card-inner {
+	transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+
+.flip-card-front, .flip-card-back {
+	position: absolute;
+	-webkit-backface-visibility: hidden;
+	/* Safari */
+	backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+
+.flip-card-front {
+	padding: 15px 10px 5px 10px;
+	/* superior | direita | inferior | esquerda */
+	color: black;
+}
+
+/* Style the back side */
+
+.flip-card-back {
+	background-color: #FFF;
+	padding: 12px;
+	border-radius: 5px;
+	color: #000;
+	transform: rotateY(180deg);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.mat-app-background {
+	/* superior | direita | inferior | esquerda */
+	padding: 15px 10px 5px 10px;
+	background-color: var(--primary-color);
+}
+
+.conteudo span{
+	width: 100%;
+	margin: 0 12px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}

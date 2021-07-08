@@ -1,0 +1,85 @@
+.sidenav-container {
+	height: 100%;
+}
+
+.sidenav {
+	width: 200px;
+}
+
+.sidenav .mat-toolbar {
+	background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+}
+
+img {
+	width: 6.25rem;
+}
+
+.top-nav {
+	display: flex;
+	justify-content: space-between;
+}
+
+.notifications {
+	display: flex;
+	padding-left: 5px;
+}
+
+/* .loader-container {
+	position: fixed;
+	width: 100%;
+	z-index: 99;
+} */
+
+/* Material Progress bar - Custom color*/
+
+::ng-deep .mat-progress-bar-fill::after {
+	background-color: var(--primary-color);
+}
+
+::ng-deep .mat-progress-bar-buffer {
+	background: var(--background-color);
+}
+
+::ng-deep .mat-progress-bar {
+	border-radius: 2px;
+}
+
+/*Material Progress Spinner - Custom color*/
+::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+	stroke: var(--primary-color);
+}
+
+/*Spinner*/
+.loader-container-spinner {
+	position: absolute;
+	top: 45%;
+	left: 45%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	z-index: 99;
+}
+
+.logo-header {
+	-webkit-mask: url('~src/assets/logo13-full-SVG.svg') no-repeat center;
+	mask: url('~src/assets/logo13-full-SVG.svg') no-repeat center;
+	mask-size: 100px ;
+	background-color: #FFF;
+	position: relative;
+	width: 190px;
+	left: -35px;
+	z-index: -1;
+}
+
+@media(max-width:380px) {
+	.loader-container-spinner {
+		top: 45%;
+		left: 37%;
+	}
+}

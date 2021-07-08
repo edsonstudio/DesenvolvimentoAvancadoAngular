@@ -1,0 +1,54 @@
+.eddy-footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 0px;
+}
+
+.eddy-icon {
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+.eddy-icon ul {
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+
+.eddy-icon ul li {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 0px 10px;
+    border-radius: 100%;
+}
+
+.eddy-icon ul li a {
+    text-decoration: none;
+    font-size: 25px;
+    display: block;
+}
+
+.eddy-icon ul li a i {
+    line-height: 50px;
+}
+
+.eddy-icon ul li a:hover>i {
+    transform: scale(1.6) rotate(25deg);
+}
+
+@media(max-width:380px) {
+    .eddy-icon ul li a i {
+        line-height: 38px;
+    }
+    .eddy-icon ul li a {
+        font-size: 20px;
+    }
+    .eddy-icon ul li {
+        width: 40px;
+        height: 40px;
+    }
+}

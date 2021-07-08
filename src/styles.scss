@@ -1,0 +1,71 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+//for light theme
+$eddy-primary: mat-palette($mat-teal, A700, A200, A100);
+$eddy-accent: mat-palette($mat-cyan);
+$eddy-warn: mat-palette($mat-yellow);
+
+$eddy-theme: mat-light-theme($eddy-primary, $eddy-accent, $eddy-warn);
+@include angular-material-theme($eddy-theme);
+
+//for dark theme
+$eddy-primary-dark: mat-palette($mat-gray, 900, A400, A200);
+$eddy-accent-dark: mat-palette($mat-gray, A200, A100, A400);
+$eddy-warn-dark: mat-palette($mat-yellow);
+
+$eddy-theme-dark: mat-dark-theme($eddy-primary-dark, $eddy-accent-dark, $eddy-warn-dark);
+.dark-theme-mode {
+    @include angular-material-theme($eddy-theme-dark);
+}
+
+:root {
+    --primary-color: #00BFA5;
+    --primary-color-dark: #272727;
+    --secondary-color-dark: #00897B;
+    --secondary-color: #a1a1a1;
+    --background-color: #303030;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.eddy-footer-dark {
+    background: var(--primary-color-dark);
+
+    .eddy-icon ul li {
+        background: var(--secondary-color);
+    }
+    
+    .eddy-icon ul li a {
+        color: var(--primary-color-dark);
+    }
+
+    .eddy-icon ul li:hover {
+        background: var(--primary-color);
+    }
+}
+
+.eddy-footer-light {
+    background: var(--primary-color);
+
+    .eddy-icon ul li {
+        background: #FFF;
+    }
+    
+    .eddy-icon ul li a {
+        color: var(--primary-color);
+    }
+
+    .eddy-icon ul li:hover {
+        background: var(--primary-color-dark);
+    }
+}

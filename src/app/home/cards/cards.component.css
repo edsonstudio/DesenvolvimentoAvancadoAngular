@@ -1,0 +1,83 @@
+.example-card {
+	max-width: 37.5rem;
+	margin: 1.25rem;
+	width: 37.5rem;
+	height: 28.75rem;
+	perspective: 1000px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.example-header-image {
+	-webkit-mask: url('~src/assets/Logo_Eddy_SVG-conv.svg') no-repeat center;
+	mask: url('~src/assets/Logo_Eddy_SVG-conv.svg') no-repeat center;
+	mask-size: 1.9375rem ;
+	background-color: var(--primary-color);
+
+}
+
+/* This container is needed to position the front and back side */
+
+.flip-card-inner {
+	position: relative;
+	width: 100%;
+	text-align: center;
+	transition: transform 0.8s;
+	transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+
+.flip-card:hover .flip-card-inner {
+	transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+
+.flip-card-front, .flip-card-back {
+	position: absolute;
+	-webkit-backface-visibility: hidden;
+	/* Safari */
+	backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+
+.flip-card-front {
+	padding: 15px 10px 5px 10px;
+	/* superior | direita | inferior | esquerda */
+	color: black;
+}
+
+/* Style the back side */
+
+.flip-card-back {
+	padding: 15px 10px 5px 10px;
+	transform: rotateY(180deg);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.mat-app-background {
+	/* superior | direita | inferior | esquerda */
+	background-color: var(--primary-color);
+	padding: 15px 10px 5px 10px;
+}
+
+.conteudo {
+	background-color: var(--primary-color);
+	border-radius: 5px;
+}
+
+.conteudo span{
+	margin: 0 12px;
+}
+
+@media(max-width:420px) {
+	.example-card {
+		max-width: 280px;
+		height: 268px;
+	}
+}
