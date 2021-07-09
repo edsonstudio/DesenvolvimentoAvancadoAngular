@@ -5,4 +5,5 @@ export class Product {
     promo: boolean;
     pricePromo: string;
     image: string;
+    active: boolean;
 }

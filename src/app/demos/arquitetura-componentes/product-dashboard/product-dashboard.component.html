@@ -1,31 +1,6 @@
 <section>
     <div class="container">
-        <div class="card" *ngFor="let product of products">
-            <div class="imgBx">
-                <img src="assets/{{ product.image }}" alt="{{ product.name }}">
-                <h2>{{ product.name | titlecase }}</h2>
-                <div class="prices">
-                    <h3 *ngIf="!product.promo">{{ product.price | currency:'BRL':symbol:'1.2-2':'pt' }}</h3>
-                    <h5 *ngIf="product.promo">De: <del>{{ product.price | currency:'BRL':symbol:'1.2-2':'pt' }}</del></h5>
-                    <h3 *ngIf="product.promo">Por: {{ product.pricePromo | currency:'BRL':symbol:'1.2-2':'pt' }}</h3>
-                </div>
-            </div>
-            <div class="content">
-                <div class="size">
-                    <h3>Size: </h3>
-                    <span>7</span>
-                    <span>8</span>
-                    <span>9</span>
-                    <span>10</span>
-                </div>
-                <div class="color">
-                    <h3>Color: </h3>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <a href="#">Buy Now</a>
-            </div>
-        </div>
+        <product-card-detail *ngFor="let product of products" [product]="product"></product-card-detail>
+        <product-count [products]="products"></product-count>
     </div>
 </section>
