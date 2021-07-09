@@ -1,3 +1,4 @@
+import { ProductsService } from './product-dashboard/products.service';
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { ProductDashboardComponent } from './product-dashboard/product-dashboard.component';
@@ -15,6 +16,9 @@ registerLocaleData(localePt);
         CommonModule,
         ProductRoutingModule
     ],
-    exports: []
+    exports: [],
+    providers: [
+        ProductsService
+    ]
 })
 export class ProductModule{}

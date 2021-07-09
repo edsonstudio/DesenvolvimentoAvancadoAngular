@@ -2,8 +2,7 @@ export class Product {
     id: string;
     name: string;
     price: string;
-    saleOff: boolean;
-    settlementPrice: string;
-    description: string;
+    promo: boolean;
+    pricePromo: string;
     image: string;
 }
