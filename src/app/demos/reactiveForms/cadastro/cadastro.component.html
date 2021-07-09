@@ -8,11 +8,10 @@
                     <input matInput placeholder="Digite seu nome completo" formControlName="nome">
                     <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
                     <mat-hint>*Nome requerido</mat-hint>
-                    <mat-error
-                        *ngIf="cadastroForm.get('nome').errors && (cadastroForm.get('nome').dirty || cadastroForm.get('nome').touched)">
-                        Preencha o campo nome</mat-error>
+                    <mat-error *ngIf="displayMessage.nome">
+                        <p [innerHTML]="displayMessage.nome"></p>
+                    </mat-error>
                 </mat-form-field>
-                <!-- <span class="msg-error" *ngIf="cadastroForm.get('nome').errors && (cadastroForm.get('nome').dirty || cadastroForm.get('nome').touched)">Preencha o campo nome</span> -->
                 <br><br>
                 <mat-form-field appearance="outline">
                     <mat-label>CPF</mat-label>
@@ -20,12 +19,9 @@
                         [textMask]="{mask: MASKS.cpf.textMask}">
                     <mat-icon matSuffix>badge</mat-icon>
                     <mat-hint>*CPF requerido</mat-hint>
-                    <mat-error
-                        *ngIf="cadastroForm.get('cpf')?.errors?.required && (cadastroForm.get('cpf').dirty || cadastroForm.get('cpf').touched)">
-                        Preencha o campo CPF</mat-error>
-                    <mat-error
-                        *ngIf="cadastroForm.get('cpf')?.errors?.cpf && (cadastroForm.get('cpf').dirty || cadastroForm.get('cpf').touched)">
-                        CPF em formato invalido</mat-error>
+                    <mat-error *ngIf="displayMessage.cpf">
+                        <p [innerHTML]="displayMessage.cpf"></p>
+                    </mat-error>
                 </mat-form-field>
                 <br><br>
                 <mat-form-field appearance="outline">
@@ -33,12 +29,9 @@
                     <input matInput placeholder="pat@example.com" formControlName="email">
                     <mat-icon matSuffix>alternate_email</mat-icon>
                     <mat-hint>*E-mail requerido</mat-hint>
-                    <mat-error
-                        *ngIf="cadastroForm.get('email')?.errors?.required && (cadastroForm.get('email').dirty || cadastroForm.get('email').touched)">
-                        Preencha o campo email</mat-error>
-                    <mat-error
-                        *ngIf="cadastroForm.get('email')?.errors?.email && (cadastroForm.get('email').dirty || cadastroForm.get('email').touched)">
-                        E-mail em formato invalido</mat-error>
+                    <mat-error *ngIf="displayMessage.email">
+                        <p [innerHTML]="displayMessage.email"></p>
+                    </mat-error>
                 </mat-form-field>
                 <br><br>
                 <mat-form-field appearance="outline">
@@ -49,13 +42,9 @@
                         [attr.aria-pressed]="hide">
                         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                     </button>
-                    <mat-error
-                        *ngIf="cadastroForm.get('senha')?.errors?.required && (cadastroForm.get('senha').dirty || cadastroForm.get('senha').touched)">
-                        Preencha o campo senha</mat-error>
-                    <mat-error
-                        *ngIf="cadastroForm.get('senha')?.errors?.rangeLength && (cadastroForm.get('senha').dirty || cadastroForm.get('senha').touched)">
-                        Tamanho inválido</mat-error>
-                    
+                    <mat-error *ngIf="displayMessage.senha">
+                        <p [innerHTML]="displayMessage.senha"></p>
+                    </mat-error>
                 </mat-form-field>
                 <br><br>
                 <mat-form-field appearance="outline">
@@ -66,15 +55,9 @@
                         [attr.aria-pressed]="hide">
                         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                     </button>
-                    <mat-error
-                        *ngIf="cadastroForm.get('senhaConfirmacao')?.errors?.required && (cadastroForm.get('senhaConfirmacao').dirty || cadastroForm.get('senhaConfirmacao').touched)">
-                        Preencha o campo Confirme a sua senha</mat-error>
-                    <mat-error
-                        *ngIf="cadastroForm.get('senhaConfirmacao')?.errors?.rangeLength && (cadastroForm.get('senhaConfirmacao').dirty || cadastroForm.get('senhaConfirmacao').touched)">
-                        Tamanho inválido</mat-error>
-                    <mat-error
-                        *ngIf="cadastroForm.get('senhaConfirmacao')?.errors?.equalTo && (cadastroForm.get('senhaConfirmacao').dirty || cadastroForm.get('senhaConfirmacao').touched)">
-                        As senhas devem ser iguais</mat-error>                    
+                    <mat-error *ngIf="displayMessage.senhaConfirmacao">
+                        <p [innerHTML]="displayMessage.senhaConfirmacao"></p>
+                    </mat-error>
                 </mat-form-field>
                 <br><br>
                 <button mat-raised-button color="primary" [disabled]="!cadastroForm.valid"
@@ -82,9 +65,7 @@
             </p>
             <p>Formulario valido: {{ cadastroForm.valid }}</p>
             <p>Formulario tocado: {{ cadastroForm.touched }}</p>
-            <!--Formulario tocado-->
             <p>Formulario sujo: {{ cadastroForm.dirty }}</p>
-            <!--Formulario sujo-->
             <p>Formulario: {{ formResult }}</p>
         </form>
     </div>
