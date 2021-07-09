@@ -4,7 +4,7 @@
 //for light theme
 $eddy-primary: mat-palette($mat-teal, A700, A200, A100);
 $eddy-accent: mat-palette($mat-cyan);
-$eddy-warn: mat-palette($mat-yellow);
+$eddy-warn: mat-palette($mat-red);
 
 $eddy-theme: mat-light-theme($eddy-primary, $eddy-accent, $eddy-warn);
 @include angular-material-theme($eddy-theme);
@@ -12,7 +12,7 @@ $eddy-theme: mat-light-theme($eddy-primary, $eddy-accent, $eddy-warn);
 //for dark theme
 $eddy-primary-dark: mat-palette($mat-gray, 900, A400, A200);
 $eddy-accent-dark: mat-palette($mat-gray, A200, A100, A400);
-$eddy-warn-dark: mat-palette($mat-yellow);
+$eddy-warn-dark: mat-palette($mat-red);
 
 $eddy-theme-dark: mat-dark-theme($eddy-primary-dark, $eddy-accent-dark, $eddy-warn-dark);
 .dark-theme-mode {

@@ -18,7 +18,7 @@ import { FooterComponent } from './footer/footer.component';
 import { SobreComponent } from './institucional/sobre/sobre.component';
 import { ContatoComponent } from './institucional/contato/contato.component';
 import { DataBindingComponent } from './demos/data-binding/data-binding.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatRadioModule} from '@angular/material/radio';
 import { ProdutoService } from './produtos/produtos.service';
@@ -30,7 +30,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
+import { CadastroComponent } from './demos/reactiveForms/cadastro/cadastro.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
 registerLocaleData(localePt);
+
+import { NgBrazil } from 'ng-brazil';
+import { TextMaskModule } from 'angular2-text-mask';
+import { CustomFormsModule } from 'ng2-validation';
 
 @NgModule({
   declarations: [
@@ -43,7 +51,8 @@ registerLocaleData(localePt);
     ContatoComponent,
     DataBindingComponent,
     ListaProdutoComponent,
-    CardProductComponent
+    CardProductComponent,
+    CadastroComponent
   ],
   imports: [
     BrowserModule,
@@ -58,11 +67,18 @@ registerLocaleData(localePt);
     MatListModule,
     MatCardModule,
     FormsModule,
+    ReactiveFormsModule,
     MatProgressSpinnerModule,
     MatProgressBarModule,
     MatRadioModule,
     MatGridListModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    NgBrazil,
+    TextMaskModule,
+    CustomFormsModule
   ],
   providers: [
     ProdutoService,

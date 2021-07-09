@@ -1,0 +1,36 @@
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.conteudo {
+    width: 80%;
+    float: left;
+    margin: 0 12px;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    margin-top: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--primary-color);
+}
+
+hr {
+    border-top: 1px dashed var(--primary-color);
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+.msg-error {
+    font-size: x-small;
+    color: red;
+}

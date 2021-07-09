@@ -1,3 +1,4 @@
+import { CadastroComponent } from './demos/reactiveForms/cadastro/cadastro.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'sobre', component: SobreComponent },
   { path: 'feature-data-binding', component: DataBindingComponent },
   { path: 'produtos', component: ListaProdutoComponent },
-  { path: 'produto-detalhe/:id', component: ListaProdutoComponent}
+  { path: 'produto-detalhe/:id', component: ListaProdutoComponent},
+  { path: 'cadastro', component: CadastroComponent}
 ];
 
 @NgModule({
