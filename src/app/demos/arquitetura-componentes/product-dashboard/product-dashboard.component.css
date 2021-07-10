@@ -10,9 +10,10 @@
     width: 100%;
     min-height: 100vh;
     display: flex; 
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
     flex-wrap: wrap;
-    justify-content: center;
+    /* justify-content: center; */
     clip-path: inset(0 0 0 0); /*exibe a scrollbar por cima do outro clip-path*/
 }
 
@@ -38,6 +39,13 @@
     background: var(--primary-color);
     clip-path: circle(35% at 0% 100%);
     z-index: -1;
+}
+
+.container h1 {
+    /* position: relative; */
+    margin-top: 20px;
+    text-align: center; 
+    text-transform: uppercase;
 }
 
 .container .content {

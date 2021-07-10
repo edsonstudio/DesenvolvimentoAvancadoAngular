@@ -6,13 +6,10 @@ import { Component, Input } from "@angular/core";
     template:
     `
         <div class="header">
-            <h1>Products</h1>
-            <div>
-                Produtos ativos: {{ contadorAtivos() }} no total de {{ products.length }} produtos.
-            </div>
+            Produtos ativos: {{ contadorAtivos() }} no total de {{ products.length }} produtos.
         </div>
         `,
-        styles: ['.header { text-align: center; margin: 20px 0; text-transform: uppercase; }']
+        styles: ['.header { margin-bottom: 20px; text-align: center; text-transform: uppercase; }']
 })
 
 export class ProductCountComponent{
