@@ -23,4 +23,8 @@ export class ProductDashboardComponent implements OnInit {
     );
   }
 
+  mudarStatus(event: Product) {
+    event.active = !event.active;
+  }
+
 }

@@ -22,7 +22,7 @@
             <span></span>
             <span></span>
         </div>
-        <a href="#" *ngIf="product.active">Buy Now</a>
-        <a href="#" *ngIf="!product.active">SOLD!!!</a>
+        <a href="javascript:void(0)" *ngIf="product.active" (click)="emitirEvento()">Buy Now</a>
+        <a href="javascript:void(0)" *ngIf="!product.active" style="background-color: orange;">SOLD!!!</a>
     </div>
 </div>

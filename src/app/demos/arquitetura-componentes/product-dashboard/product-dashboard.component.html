@@ -1,6 +1,6 @@
 <section>
     <div class="container">
-        <product-card-detail *ngFor="let product of products" [product]="product"></product-card-detail>
+        <product-card-detail *ngFor="let product of products" [product]="product" (status)="mudarStatus($event)"></product-card-detail>
         <product-count [products]="products"></product-count>
     </div>
 </section>
