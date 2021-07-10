@@ -5,13 +5,14 @@ import { Component, Input } from "@angular/core";
     selector: 'product-count',
     template:
     `
-        <div>
-            <h2>Products</h2>
+        <div class="header">
+            <h1>Products</h1>
             <div>
-                Produtos ativos: {{ contadorAtivos() }} no total de {{ products.length }} produtos. <br><br>
+                Produtos ativos: {{ contadorAtivos() }} no total de {{ products.length }} produtos.
             </div>
         </div>
-    `
+        `,
+        styles: ['.header { text-align: center; margin: 20px 0; text-transform: uppercase; }']
 })
 
 export class ProductCountComponent{
