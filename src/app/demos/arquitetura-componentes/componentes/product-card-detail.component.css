@@ -143,3 +143,17 @@
     text-decoration: none;
     text-transform: uppercase;
 }
+
+.card .content .button-buy {
+    text-align: center;
+}
+
+.card .content .button-sold {
+    text-align: center;
+    
+}
+
+.card .content .button-sold a {
+    background-color: #F00;
+    color: #FFF;
+}

@@ -3,9 +3,10 @@
         <img src="assets/{{ product.image }}" alt="{{ product.name }}">
         <h2>{{ product.name | titlecase }}</h2>
         <div class="prices">
+            <h5 *ngIf="!product.promo">Price:</h5>
             <h3 *ngIf="!product.promo">{{ product.price | currency:'BRL':symbol:'1.2-2':'pt' }}</h3>
-            <h5 *ngIf="product.promo">De: <del>{{ product.price | currency:'BRL':symbol:'1.2-2':'pt' }}</del></h5>
-            <h3 *ngIf="product.promo">Por: {{ product.pricePromo | currency:'BRL':symbol:'1.2-2':'pt' }}</h3>
+            <h5 *ngIf="product.promo">From: <del>{{ product.price | currency:'BRL':symbol:'1.2-2':'pt' }}</del></h5>
+            <h3 *ngIf="product.promo">Today: {{ product.pricePromo | currency:'BRL':symbol:'1.2-2':'pt' }}</h3>
         </div>
     </div>
     <div class="content">
@@ -22,7 +23,13 @@
             <span></span>
             <span></span>
         </div>
-        <a href="javascript:void(0)" *ngIf="product.active" (click)="emitirEvento()">Buy Now</a>
-        <a href="javascript:void(0)" *ngIf="!product.active" style="background-color: orange;">SOLD!!!</a>
+        <div class="button-buy" *ngIf="product.active">
+            <a href="javascript:void(0)" (click)="emitirEvento()">Buy Now</a>
+            <ng-content select=".stock"></ng-content>
+        </div>
+        <div class="button-sold" *ngIf="!product.active">
+            <a href="javascript:void(0)">SOLD!!!</a>
+            <ng-content select=".sold"></ng-content>
+        </div>
     </div>
 </div>

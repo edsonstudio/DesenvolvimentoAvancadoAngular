@@ -48,3 +48,12 @@ section::after {
     flex-wrap: wrap;
 }
 
+.container .sold {
+    padding-top: 20px;
+    color: #F00;
+    font-weight: 500;
+}
+
+.container .stock {
+    padding-top: 20px;
+}
