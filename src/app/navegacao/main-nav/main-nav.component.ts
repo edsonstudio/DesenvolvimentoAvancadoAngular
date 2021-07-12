@@ -77,6 +77,13 @@ export class MainNavComponent {
 			icon: 'app_registration',
 			exact: true,
 			admin: false
+		},
+		{
+			link:'/admin',
+			name: 'Admin',
+			icon: 'admin_panel_settings',
+			exact: true,
+			admin: true
 		}
 	];
 }

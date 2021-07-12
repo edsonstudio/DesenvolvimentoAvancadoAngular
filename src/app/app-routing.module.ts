@@ -18,8 +18,11 @@ const routes: Routes = [
 	{ path: 'produto-detalhe/:id', component: ListaProdutoComponent },
 	{ path: 'cadastro', component: CadastroComponent },
 	{ path: 'product',
-	loadChildren: () => import('./demos/arquitetura-componentes/product.module')
-	.then(m => m.ProductModule)},
+			loadChildren: () => import('./demos/arquitetura-componentes/product.module')
+			.then(m => m.ProductModule)},
+	{ path: 'admin', 
+			loadChildren: () => import('./admin/admin.module')
+			.then(m => m.AdminModule)},
 	{ path: '**', component: NotFoundComponent }
 ];
 
