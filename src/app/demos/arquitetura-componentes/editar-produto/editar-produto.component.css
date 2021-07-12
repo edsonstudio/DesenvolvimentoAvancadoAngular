@@ -7,7 +7,22 @@
     justify-content: center;
 }
 
-.card {
+.container h1 {
+    margin-top: 20px;
+    text-align: center; 
+    text-transform: uppercase;
+}
+
+.container .contents {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.container .contents .card {
     position: relative;
     width: 300px;
     height: 400px;
@@ -24,7 +39,7 @@
     background-color: rgba(104, 100, 100, 0.096);
 }
 
-.card .imgBx {
+.container .contents .card .imgBx {
     position: relative;
     display: flex;
     justify-content: center;
@@ -34,25 +49,25 @@
     transition: 0.5s ease-in-out;
 }
 
-.card:hover .imgBx {
+.container .contents .card:hover .imgBx {
     transform: translateY(-90px);
 }
 
-.card .imgBx img {
+.container .contents .card .imgBx img {
     max-width: 100%;
     margin: 0 0 20px;
     transition: 0.5s ease-in-out;
 }
 
-.card:hover .imgBx img{
+.container .contents .card:hover .imgBx img{
     transform: translate(-20px, -40px) rotate(-25deg) scale(1.4);
 }
 
-.card .imgBx h2 {
+.container .contents .card .imgBx h2 {
     font-weight: 600;
 }
 
-.card .content {
+.container .contents .card .content {
     position: absolute;
     bottom: 20px;
     display: flex;
@@ -64,39 +79,39 @@
     visibility: hidden;
 }
 
-.card .imgBx .prices {
+.container .contents .card .imgBx .prices {
     opacity: 1;
     visibility: visible;
 }
 
-.card:hover .imgBx .prices {
+.container .contents .card:hover .imgBx .prices {
     opacity: 0;
     visibility: hidden;
 }
 
-.card:hover .content {
+.container .contents .card:hover .content {
     opacity: 1;
     visibility: visible;
     transform: translateY(-60px);
 }
 
-.card .content .color,
-.card .content .size {
+.container .contents .card .content .color,
+.container .contents .card .content .size {
     display: flex;
     justify-content: center;
     max-height: 30px;
     padding: 5px; 
 }
 
-.card .content .color h3,
-.card .content .size h3 {
+.container .contents .card .content .color h3,
+.container .contents .card .content .size h3 {
     font-weight: 300;
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
-.card .content .size span {
+.container .contents .card .content .size span {
     width: 26px;
     height: 26px;
     text-align: center;
@@ -112,11 +127,11 @@
     cursor: pointer;
 }
 
-.card .content .size span:hover {
+.container .contents .card .content .size span:hover {
     background: #9bdc28;
 }
 
-.card .content .color span {
+.container .contents .card .content .color span {
     width: 20px;
     height: 20px;
     background: #F00;
@@ -126,19 +141,19 @@
     cursor: pointer;
 }
 
-.card .content .color span:nth-child(2) {
+.container .contents .card .content .color span:nth-child(2) {
     background: #9bdc28;
 }
 
-.card .content .color span:nth-child(3) {
+.container .contents .card .content .color span:nth-child(3) {
     background: #03a9f4;
 }
 
-.card .content .color span:nth-child(4) {
+.container .contents .card .content .color span:nth-child(4) {
     background: #e91e63;
 }
 
-.card .content a {
+.container .contents .card .content a {
     position: relative;
     top: 10px;
     display: inline-block;
@@ -152,27 +167,27 @@
     text-transform: uppercase;
 }
 
-.card .content .button-buy {
+.container .contents .card .content .button-buy {
     text-align: center;
 }
 
-.card .content .button-sold {
+.container .contents .card .content .button-sold {
     text-align: center;
     
 }
 
-.card .content .button-sold a {
+.container .contents .card .content .button-sold a {
     background-color: #F00;
     color: #FFF;
 }
 
-.card .card-footer {
+.container .contents .card .card-footer {
     opacity: 0;
     visibility: hidden;
     transition: 0.5s;
 }
 
-.card:hover .card-footer {
+.container .contents .card:hover .card-footer {
     opacity: 1;
     visibility: visible;
     transition: 1.5s;

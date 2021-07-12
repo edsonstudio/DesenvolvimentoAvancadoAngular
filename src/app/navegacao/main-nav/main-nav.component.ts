@@ -47,7 +47,7 @@ export class MainNavComponent {
 			link:'/product',
 			name: 'Products',
 			icon: 'shopping_bag',
-			exact: true,
+			exact: false,
 			admin: false
 		},
 		{

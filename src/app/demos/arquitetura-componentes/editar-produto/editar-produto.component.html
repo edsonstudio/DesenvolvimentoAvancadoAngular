@@ -1,26 +1,51 @@
 <div class="container">
-    <div class="card">
-        <div class="imgBx">
-            
-        </div>
-        <div class="content">
-            <div class="size">
-                <h3>Size: </h3>
-                <span>7</span>
-                <span>8</span>
-                <span>9</span>
-                <span>10</span>
+    <div class="contents">
+        <div class="card">
+            <div class="imgBx">
+                <img src="assets/{{ product.image }}" alt="{{ product.name }}">
+                <h2>{{ product.name | titlecase }}</h2>
+                <div class="prices">
+                    <h5 *ngIf="!product.promo">Price:</h5>
+                    <h3 *ngIf="!product.promo">{{ product.price | currency:'BRL':symbol:'1.2-2':'pt' }}</h3>
+                    <h5 *ngIf="product.promo">From: <del>{{ product.price | currency:'BRL':symbol:'1.2-2':'pt' }}</del>
+                    </h5>
+                    <h3 *ngIf="product.promo">Today: {{ product.pricePromo | currency:'BRL':symbol:'1.2-2':'pt' }}</h3>
+                </div>
             </div>
-            <div class="color">
-                <h3>Color: </h3>
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="content">
+                <div class="size">
+                    <h3>Size: </h3>
+                    <span>7</span>
+                    <span>8</span>
+                    <span>9</span>
+                    <span>10</span>
+                </div>
+                <div class="color">
+                    <h3>Color: </h3>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="button-buy" *ngIf="product.active">
+                    <a href="javascript:void(0)">Buy Now</a>
+                    <ng-content select=".stock"></ng-content>
+                </div>
+                <div class="button-sold" *ngIf="!product.active">
+                    <a href="javascript:void(0)">SOLD!!!</a>
+                    <ng-content select=".sold"></ng-content>
+                </div>
             </div>
-            
-        </div>
-        <div class="card-footer">
-            
+            <div class="card-footer">
+                <button mat-icon-button>
+                    <mat-icon>save</mat-icon>
+                </button>
+                <button mat-icon-button>
+                    <mat-icon>zoom_in</mat-icon>
+                </button>
+                <button mat-icon-button>
+                    <mat-icon>add_shopping_cart</mat-icon>
+                </button>
+            </div>
         </div>
     </div>
 </div>
