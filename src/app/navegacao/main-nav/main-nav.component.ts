@@ -21,9 +21,9 @@ export class MainNavComponent {
 	constructor(private breakpointObserver: BreakpointObserver, public loaderService: LoaderService) { }
 
 	
-	// ngOnInit() {
-	// 	this.isDarkTheme = localStorage.getItem('theme') === "Dark" ? true : false;
-	// }
+	ngOnInit() {
+		this.isDarkTheme = localStorage.getItem('theme') === "Dark" ? true : false;
+	}
 
 	storeThemeSelection() {
 		localStorage.setItem('theme', this.isDarkTheme ? "Dark" : "Light");

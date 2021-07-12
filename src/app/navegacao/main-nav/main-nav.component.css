@@ -51,11 +51,13 @@ img {
 }
 
 /*Material Progress Spinner - Custom color*/
+
 ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
 	stroke: var(--primary-color);
 }
 
 /*Spinner*/
+
 .loader-container-spinner {
 	position: absolute;
 	top: 45%;
@@ -69,12 +71,16 @@ img {
 .logo-header {
 	-webkit-mask: url('~src/assets/logo13-full-SVG.svg') no-repeat center;
 	mask: url('~src/assets/logo13-full-SVG.svg') no-repeat center;
-	mask-size: 100px ;
+	mask-size: 100px;
 	background-color: #FFF;
 	position: relative;
 	width: 190px;
 	left: -35px;
 	z-index: -1;
+}
+
+.active-link {
+	color: var(--primary-color)!important;
 }
 
 @media(max-width:380px) {

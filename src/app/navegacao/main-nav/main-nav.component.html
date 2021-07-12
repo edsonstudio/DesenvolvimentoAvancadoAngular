@@ -3,13 +3,13 @@
 		[mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
 		<mat-toolbar>Menu</mat-toolbar>
 		<mat-nav-list>
-			<a mat-list-item [routerLink]="['/home']"><mat-icon>home</mat-icon>&nbsp; Home</a>
-			<a mat-list-item [routerLink]="['/produtos']"><mat-icon>add_shopping_cart</mat-icon>&nbsp; Products</a>
-			<a mat-list-item [routerLink]="['/product']"><mat-icon>shopping_bag</mat-icon>&nbsp; Product</a>
-			<a mat-list-item [routerLink]="['/sobre']"><mat-icon>info</mat-icon>&nbsp; About</a>
-			<a mat-list-item [routerLink]="['/contato']"><mat-icon>alternate_email</mat-icon>&nbsp; Contact</a>
-			<a mat-list-item [routerLink]="['/feature-data-binding']"><mat-icon>fact_check</mat-icon>&nbsp; Features</a>
-			<a mat-list-item [routerLink]="['/cadastro']"><mat-icon>app_registration</mat-icon>&nbsp; Register</a>
+			<a mat-list-item [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active-link" [routerLink]="['/home']"><mat-icon>home</mat-icon>&nbsp; Home</a>
+			<a mat-list-item [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active-link" [routerLink]="['/produtos']"><mat-icon>add_shopping_cart</mat-icon>&nbsp; Products</a>
+			<a mat-list-item [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active-link" [routerLink]="['/product']"><mat-icon>shopping_bag</mat-icon>&nbsp; Product</a>
+			<a mat-list-item [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active-link" [routerLink]="['/sobre']"><mat-icon>info</mat-icon>&nbsp; About</a>
+			<a mat-list-item [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active-link" [routerLink]="['/contato']"><mat-icon>alternate_email</mat-icon>&nbsp; Contact</a>
+			<a mat-list-item [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active-link" [routerLink]="['/feature-data-binding']"><mat-icon>fact_check</mat-icon>&nbsp; Features</a>
+			<a mat-list-item [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active-link" [routerLink]="['/cadastro']"><mat-icon>app_registration</mat-icon>&nbsp; Register</a>
 		</mat-nav-list>
 	</mat-sidenav>
 	<mat-sidenav-content [ngSwitch]="isDarkTheme">
