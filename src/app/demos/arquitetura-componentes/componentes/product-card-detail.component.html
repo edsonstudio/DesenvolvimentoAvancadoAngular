@@ -32,4 +32,15 @@
             <ng-content select=".sold"></ng-content>
         </div>
     </div>
+    <div class="card-footer">
+        <button mat-icon-button [routerLink]="['edit/',product.id]">
+            <mat-icon>mode_edit</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon>zoom_in</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon>add_shopping_cart</mat-icon>
+        </button>
+    </div>
 </div>

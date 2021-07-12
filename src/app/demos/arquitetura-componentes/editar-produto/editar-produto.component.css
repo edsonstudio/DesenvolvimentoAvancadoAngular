@@ -1,3 +1,12 @@
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .card {
     position: relative;
     width: 300px;
