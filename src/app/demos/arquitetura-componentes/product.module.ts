@@ -7,7 +7,8 @@ import localePt from '@angular/common/locales/pt';
 registerLocaleData(localePt);
 
 // ---------------Services---------------
-import { ProductsService } from './product-dashboard/products.service';
+import { ProductsService } from './services/products.service';
+import { ProductResolve } from './services/product.resolve';
 
 // ---------------Components---------------
 import { ProductDashboardComponent } from './product-dashboard/product-dashboard.component';
@@ -36,7 +37,8 @@ import { MatIconModule } from '@angular/material/icon';
     ],
     exports: [],
     providers: [
-        ProductsService
+        ProductsService,
+        ProductResolve
     ]
 })
 export class ProductModule{}

@@ -1,4 +1,4 @@
-import { Product } from './../models/product';
+import { Product } from '../models/product';
 import { Injectable } from "@angular/core";
 
 @Injectable()
@@ -33,7 +33,7 @@ export class ProductsService {
                 promo: true,
                 pricePromo: 990.9,
                 image: "tenis03.png",
-                active: true
+                active: false
             },
             {
                 id: 4,
@@ -51,7 +51,7 @@ export class ProductsService {
                 promo: true,
                 pricePromo: 990.9,
                 image: "tenis05.png",
-                active: true
+                active: false
             },
             {
                 id: 6,
@@ -65,7 +65,11 @@ export class ProductsService {
         ];
     }
 
-    getProducts(): Product[] {
+    getProducts(status: string): Product[] {
+        if(status === 'actives') {
+            return this.products.filter(product => product.active);
+        }
+
         return this.products;
     }
 

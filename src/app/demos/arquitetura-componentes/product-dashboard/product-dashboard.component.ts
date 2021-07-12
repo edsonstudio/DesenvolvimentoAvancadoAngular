@@ -3,6 +3,7 @@ import { ProductCountComponent } from './../componentes/product-count.component'
 import { fromEvent, Observable } from 'rxjs';
 import { Product } from './../models/product';
 import { Component, OnInit, ElementRef, ViewChild, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product-dashboard',
@@ -10,73 +11,18 @@ import { Component, OnInit, ElementRef, ViewChild, AfterViewInit, ViewChildren, 
   styleUrls: ['./product-dashboard.component.css']
 })
 export class ProductDashboardComponent implements OnInit, AfterViewInit {
-
-  constructor() { }
-
+  
   products: Product[];
-
+  
   @ViewChild(ProductCountComponent, { static: false }) contador: ProductCountComponent;
   @ViewChild('teste', { static: false }) mensagemTela: ElementRef;
-
+  
   @ViewChildren(ProductDetailComponent) cards: QueryList<ProductDetailComponent>;  
+  
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.products = [
-      {
-        id: 1,
-        name: "Nike Shoes Green",
-        price: 1500.9,
-        promo: false,
-        pricePromo: 0,
-        image: "tenis01.png",
-        active: false
-      },
-      {
-        id: 2,
-        name: "Nike Shoes Blue",
-        price: 1500.9,
-        promo: true,
-        pricePromo: 990.9,
-        image: "tenis02.png",
-        active: true
-      },
-      {
-        id: 3,
-        name: "Nike Shoes Pink",
-        price: 1500.9,
-        promo: true,
-        pricePromo: 990.9,
-        image: "tenis03.png",
-        active: true
-      },
-      {
-        id: 4,
-        name: "Nike Shoes Silver",
-        price: 1500.9,
-        promo: true,
-        pricePromo: 990.9,
-        image: "tenis04.png",
-        active: true
-      },
-      {
-        id: 5,
-        name: "Nike Shoes Black",
-        price: 1500.9,
-        promo: true,
-        pricePromo: 990.9,
-        image: "tenis05.png",
-        active: true
-      },
-      {
-        id: 6,
-        name: "Nike Shoes Red",
-        price: 1500.9,
-        promo: true,
-        pricePromo: 990.9,
-        image: "tenis06.png",
-        active: true
-      }
-    ];
+    this.products = this.route.snapshot.data['products'];
   }
 
   ngAfterViewInit(): void {
