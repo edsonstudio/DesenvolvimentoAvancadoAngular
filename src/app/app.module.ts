@@ -9,7 +9,6 @@ import { CadastroComponent } from './demos/reactiveForms/cadastro/cadastro.compo
 
 // ---------------Services---------------
 import { ProdutoService } from './produtos/produtos.service';
-import { InterceptorService } from './loader/interceptor.service';
 
 // ---------------Angular---------------
 import { NgModule } from '@angular/core';
@@ -77,8 +76,7 @@ import { CustomFormsModule } from 'ng2-validation';
     MatProgressBarModule
   ],
   providers: [
-    ProdutoService,
-    { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true }
+    ProdutoService
   ],
   bootstrap: [AppComponent]
 })

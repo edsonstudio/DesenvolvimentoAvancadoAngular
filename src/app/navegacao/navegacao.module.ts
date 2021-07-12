@@ -21,6 +21,11 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { HTTP_INTERCEPTORS } from "@angular/common/http";
+
+// ---------------Services---------------
+import { InterceptorService } from "../loader/interceptor.service";
+import { ProdutoService } from "../produtos/produtos.service";
 
 @NgModule({
     declarations: [
@@ -50,6 +55,10 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
         HomeComponent,
         CardsComponent,
         NotFoundComponent
+    ],
+    providers: [
+        ProdutoService,
+        { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true }
     ]
 })
 export class NavegacaoModule {}
