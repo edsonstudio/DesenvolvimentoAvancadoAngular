@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { HomeComponent } from './home/home.component';
 import { CardsComponent } from './home/cards/cards.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 // ---------------Angular Material---------------
 import { MatIconModule } from '@angular/material/icon';
@@ -26,7 +27,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
         MainNavComponent,
         FooterComponent,
         HomeComponent,
-        CardsComponent
+        CardsComponent,
+        NotFoundComponent
     ],
     imports: [
         CommonModule,
@@ -46,7 +48,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
         MainNavComponent,
         FooterComponent,
         HomeComponent,
-        CardsComponent
+        CardsComponent,
+        NotFoundComponent
     ]
 })
 export class NavegacaoModule {}
