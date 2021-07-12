@@ -83,6 +83,10 @@ img {
 	color: var(--primary-color)!important;
 }
 
+::ng-deep .mat-nav-list {
+	padding: 0px !important;
+}
+
 @media(max-width:380px) {
 	.loader-container-spinner {
 		top: 45%;

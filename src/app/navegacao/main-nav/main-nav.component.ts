@@ -10,7 +10,7 @@ import { map, shareReplay } from 'rxjs/operators';
 	styleUrls: ['./main-nav.component.css']
 })
 export class MainNavComponent {
-
+	
 	isDarkTheme: boolean = false;
 	isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
 		.pipe(
@@ -20,7 +20,6 @@ export class MainNavComponent {
 
 	constructor(private breakpointObserver: BreakpointObserver, public loaderService: LoaderService) { }
 
-	
 	ngOnInit() {
 		this.isDarkTheme = localStorage.getItem('theme') === "Dark" ? true : false;
 	}
@@ -29,4 +28,63 @@ export class MainNavComponent {
 		localStorage.setItem('theme', this.isDarkTheme ? "Dark" : "Light");
 	}
 
+	nav: Nav[] = [
+		{
+			link:'/home',
+			name: 'Home',
+			icon: 'home',
+			exact: true,
+			admin: false
+		},
+		{
+			link:'/produtos',
+			name: 'Produtos',
+			icon: 'add_shopping_cart',
+			exact: true,
+			admin: false
+		},
+		{
+			link:'/product',
+			name: 'Products',
+			icon: 'shopping_bag',
+			exact: true,
+			admin: false
+		},
+		{
+			link:'/sobre',
+			name: 'About',
+			icon: 'info',
+			exact: true,
+			admin: false
+		},
+		{
+			link:'/contato',
+			name: 'Contact',
+			icon: 'alternate_email',
+			exact: true,
+			admin: false
+		},
+		{
+			link:'/feature-data-binding',
+			name: 'Features',
+			icon: 'fact_check',
+			exact: true,
+			admin: false
+		},
+		{
+			link:'/cadastro',
+			name: 'Register',
+			icon: 'app_registration',
+			exact: true,
+			admin: false
+		}
+	];
+}
+
+interface Nav {
+	link: string,
+	name: string,
+	icon: string, 
+	exact: boolean,
+	admin: boolean
 }
