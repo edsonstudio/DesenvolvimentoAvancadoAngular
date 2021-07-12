@@ -2,7 +2,6 @@ import { ProductDetailComponent } from './../componentes/product-card-detail.com
 import { ProductCountComponent } from './../componentes/product-count.component';
 import { fromEvent, Observable } from 'rxjs';
 import { Product } from './../models/product';
-import { ProductsService } from './products.service';
 import { Component, OnInit, ElementRef, ViewChild, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
 
 @Component({
@@ -12,9 +11,9 @@ import { Component, OnInit, ElementRef, ViewChild, AfterViewInit, ViewChildren, 
 })
 export class ProductDashboardComponent implements OnInit, AfterViewInit {
 
-  constructor(private productsService: ProductsService) { }
+  constructor() { }
 
-  public products: Product[];
+  products: Product[];
 
   @ViewChild(ProductCountComponent, { static: false }) contador: ProductCountComponent;
   @ViewChild('teste', { static: false }) mensagemTela: ElementRef;
@@ -22,13 +21,62 @@ export class ProductDashboardComponent implements OnInit, AfterViewInit {
   @ViewChildren(ProductDetailComponent) cards: QueryList<ProductDetailComponent>;  
 
   ngOnInit(): void {
-    this.productsService.getProducts().subscribe(
-      products => {
-        this.products = products;
-        console.log(products);
+    this.products = [
+      {
+        id: 1,
+        name: "Nike Shoes Green",
+        price: 1500.9,
+        promo: false,
+        pricePromo: 0,
+        image: "tenis01.png",
+        active: false
       },
-      error => console.log(error)
-    );
+      {
+        id: 2,
+        name: "Nike Shoes Blue",
+        price: 1500.9,
+        promo: true,
+        pricePromo: 990.9,
+        image: "tenis02.png",
+        active: true
+      },
+      {
+        id: 3,
+        name: "Nike Shoes Pink",
+        price: 1500.9,
+        promo: true,
+        pricePromo: 990.9,
+        image: "tenis03.png",
+        active: true
+      },
+      {
+        id: 4,
+        name: "Nike Shoes Silver",
+        price: 1500.9,
+        promo: true,
+        pricePromo: 990.9,
+        image: "tenis04.png",
+        active: true
+      },
+      {
+        id: 5,
+        name: "Nike Shoes Black",
+        price: 1500.9,
+        promo: true,
+        pricePromo: 990.9,
+        image: "tenis05.png",
+        active: true
+      },
+      {
+        id: 6,
+        name: "Nike Shoes Red",
+        price: 1500.9,
+        promo: true,
+        pricePromo: 990.9,
+        image: "tenis06.png",
+        active: true
+      }
+    ];
   }
 
   ngAfterViewInit(): void {

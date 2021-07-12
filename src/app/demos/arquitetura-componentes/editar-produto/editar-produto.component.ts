@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Product } from '../models/product';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-editar-produto',
