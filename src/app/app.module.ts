@@ -1,16 +1,3 @@
-import { AuthGuard } from './services/app.guard';
-// ---------------Components---------------
-import { AppComponent } from './app.component';
-import { SobreComponent } from './institucional/sobre/sobre.component';
-import { ContatoComponent } from './institucional/contato/contato.component';
-import { DataBindingComponent } from './demos/data-binding/data-binding.component';
-import { ListaProdutoComponent } from './produtos/lista-produto/lista-produto.component';
-import { CardProductComponent } from './produtos/card-product/card-product.component';
-import { CadastroComponent } from './demos/reactiveForms/cadastro/cadastro.component';
-
-// ---------------Services---------------
-import { ProdutoService } from './produtos/produtos.service';
-
 // ---------------Angular---------------
 import { NgModule } from '@angular/core';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -22,6 +9,20 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 registerLocaleData(localePt);
+
+// ---------------Components---------------
+import { AppComponent } from './app.component';
+import { SobreComponent } from './institucional/sobre/sobre.component';
+import { ContatoComponent } from './institucional/contato/contato.component';
+import { DataBindingComponent } from './demos/data-binding/data-binding.component';
+import { ListaProdutoComponent } from './produtos/lista-produto/lista-produto.component';
+import { CardProductComponent } from './produtos/card-product/card-product.component';
+import { CadastroComponent } from './demos/reactiveForms/cadastro/cadastro.component';
+
+// ---------------Services---------------
+import { ProdutoService } from './produtos/produtos.service';
+import { AuthGuard } from './services/app.guard';
+import { RegisterGuard } from './services/register.guard';
 
 // ---------------Angular material---------------
 import { MatButtonModule } from '@angular/material/button';
@@ -78,7 +79,8 @@ import { CustomFormsModule } from 'ng2-validation';
   ],
   providers: [
     ProdutoService,
-    AuthGuard
+    AuthGuard,
+    RegisterGuard
   ],
   bootstrap: [AppComponent]
 })
