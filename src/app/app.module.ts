@@ -1,3 +1,4 @@
+import { AuthGuard } from './services/app.guard';
 // ---------------Components---------------
 import { AppComponent } from './app.component';
 import { SobreComponent } from './institucional/sobre/sobre.component';
@@ -76,7 +77,8 @@ import { CustomFormsModule } from 'ng2-validation';
     MatProgressBarModule
   ],
   providers: [
-    ProdutoService
+    ProdutoService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
