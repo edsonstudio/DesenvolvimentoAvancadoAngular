@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class BarService {
+export class BarServices {
 
   constructor(private http: HttpClient) { }
 
@@ -18,5 +18,20 @@ export class BarService {
 
   obterRefeicoes(): string {
     return 'Refeições';
+  }
+}
+
+export class BarServicesMock {
+
+  obterBebidas(): string {
+    return 'Mock';
+  }
+
+  obterPorcoes(): string {
+    return 'Mock';
+  }
+
+  obterRefeicoes(): string {
+    return 'Mock';
   }
 }

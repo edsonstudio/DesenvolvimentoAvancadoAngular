@@ -1,5 +1,5 @@
 // ---------------Angular---------------
-import { NgModule } from '@angular/core';
+import { NgModule, Provider } from '@angular/core';
 import { LayoutModule } from '@angular/cdk/layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -26,6 +26,7 @@ import { ImageFormaterPipe } from './demos/pipes/filmes/image.pipe';
 import { ProdutoService } from './produtos/produtos.service';
 import { AuthGuard } from './services/app.guard';
 import { RegisterGuard } from './services/register.guard';
+import { BarServices } from './demos/bar-di-zones/bar.service';
 
 // ---------------Angular material---------------
 import { MatButtonModule } from '@angular/material/button';
@@ -48,6 +49,10 @@ import { BarModule } from './demos/bar-di-zones/bar.module';
 import { NgBrazil } from 'ng-brazil';
 import { TextMaskModule } from 'angular2-text-mask';
 import { CustomFormsModule } from 'ng2-validation';
+
+export const BAR_PROVIDERS: Provider[] = [
+  BarServices
+];
 
 @NgModule({
   declarations: [
@@ -90,7 +95,8 @@ import { CustomFormsModule } from 'ng2-validation';
   providers: [
     ProdutoService,
     AuthGuard,
-    RegisterGuard
+    RegisterGuard,
+    // BAR_PROVIDERS
   ],
   bootstrap: [AppComponent]
 })
