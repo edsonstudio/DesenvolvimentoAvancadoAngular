@@ -42,6 +42,7 @@ import { MatTableModule } from '@angular/material/table';
 
 // ---------------Sub-modules---------------
 import { NavegacaoModule } from './navegacao/navegacao.module';
+import { BarModule } from './demos/bar-di-zones/bar.module';
 
 // ---------------Validation modules---------------
 import { NgBrazil } from 'ng-brazil';
@@ -83,7 +84,8 @@ import { CustomFormsModule } from 'ng2-validation';
     CustomFormsModule,
     MatProgressSpinnerModule,
     MatProgressBarModule,
-    MatTableModule
+    MatTableModule,
+    BarModule
   ],
   providers: [
     ProdutoService,

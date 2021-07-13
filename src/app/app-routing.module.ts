@@ -1,3 +1,4 @@
+import { BarComponent } from './demos/bar-di-zones/bar.component';
 import { FilmesComponent } from './demos/pipes/filmes/filmes.component';
 import { RegisterGuard } from './services/register.guard';
 import { NotFoundComponent } from './navegacao/not-found/not-found.component';
@@ -17,6 +18,7 @@ const routes: Routes = [
 	{ path: 'contato', component: ContatoComponent },
 	{ path: 'sobre', component: SobreComponent },
 	{ path: 'filmes', component: FilmesComponent },
+	{ path: 'bar', component: BarComponent },
 	{ path: 'feature-data-binding', component: DataBindingComponent },
 	{ path: 'produtos', component: ListaProdutoComponent },
 	{ path: 'produto-detalhe/:id', component: ListaProdutoComponent },

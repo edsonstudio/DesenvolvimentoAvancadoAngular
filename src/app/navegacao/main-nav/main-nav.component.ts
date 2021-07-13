@@ -65,6 +65,13 @@ export class MainNavComponent {
 			admin: false
 		},
 		{
+			link:'/bar',
+			name: 'Bar',
+			icon: 'liquor',
+			exact: true,
+			admin: false
+		},
+		{
 			link:'/contato',
 			name: 'Contact',
 			icon: 'alternate_email',
