@@ -2,13 +2,18 @@ import { BarUnidadeConfig, BAR_UNIDADE_CONFIG } from './bar.config';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BarComponent } from './bar.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
 
 @NgModule({
   declarations: [
     BarComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatButtonModule,
+    MatProgressBarModule
   ],
   exports: [
     BarComponent

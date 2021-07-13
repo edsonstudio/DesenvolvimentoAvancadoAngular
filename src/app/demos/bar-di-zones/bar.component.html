@@ -2,7 +2,7 @@
     <div class="conteudo">
         <h1>Bar</h1>
         <div>
-            Unidade Manual :  {{ configManual.unidadeId }} - Token Manual : {{ configManual.unidadeToken}}
+            Unidade Manual : {{ configManual.unidadeId }} - Token Manual : {{ configManual.unidadeToken}}
         </div>
         <div>
             Unidade : {{ config.unidadeId }} - Token : {{ config.unidadeToken}}
@@ -16,5 +16,23 @@
         <div>
             Dados Unidade (service) {{ dadosUnidade }}
         </div>
+
+        <br><br><br><br>
+
+        <h2>Progress: {{progress}}%</h2>
+
+        <mat-progress-bar mode="determinate" [color]="updateColor(progress)" [value]="progress"></mat-progress-bar><br>
+
+        <p *ngIf="progress >= 100">Done processing {{label}} of Angular zone!</p>
+
+        <div class="buttons">
+            <button mat-raised-button color="primary" (click)="processWithinAngularZone()">
+                Processar dentro da Zona do Angular
+            </button><br>
+            <button mat-raised-button color="warn" (click)="processOutsideOfAngularZone()">
+                Processar fora da Zona do Angular
+            </button>
+        </div>
+
     </div>
 </div>
