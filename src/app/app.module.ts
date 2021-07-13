@@ -90,7 +90,10 @@ export const BAR_PROVIDERS: Provider[] = [
     MatProgressSpinnerModule,
     MatProgressBarModule,
     MatTableModule,
-    BarModule
+    BarModule.forRoot({
+      unidadeId: 1000,
+      unidadeToken: 'eca938c99a0e9ff91029dc'
+    })
   ],
   providers: [
     ProdutoService,
