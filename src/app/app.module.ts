@@ -20,6 +20,7 @@ import { CardProductComponent } from './produtos/card-product/card-product.compo
 import { CadastroComponent } from './demos/reactiveForms/cadastro/cadastro.component';
 import { FilmesComponent } from './demos/pipes/filmes/filmes.component';
 import { FileSizePipe } from './demos/pipes/filmes/filesize.pipe';
+import { ImageFormaterPipe } from './demos/pipes/filmes/image.pipe';
 
 // ---------------Services---------------
 import { ProdutoService } from './produtos/produtos.service';
@@ -57,7 +58,8 @@ import { CustomFormsModule } from 'ng2-validation';
     CardProductComponent,
     CadastroComponent,
     FilmesComponent,
-    FileSizePipe
+    FileSizePipe,
+    ImageFormaterPipe
   ],
   imports: [
     NavegacaoModule,

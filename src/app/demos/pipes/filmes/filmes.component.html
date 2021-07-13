@@ -1,6 +1,6 @@
 <div class="container">
     <h1>Filmes</h1>
-    <table mat-table [dataSource]="filmes" multiTemplateDataRows class="mat-elevation-z8">
+    <table mat-table [dataSource]="mapped" multiTemplateDataRows class="mat-elevation-z8">
         <ng-container matColumnDef="{{ column }}" *ngFor="let column of columnsToDisplay">
             <th mat-header-cell *matHeaderCellDef> {{ column | uppercase }} </th>
             <!-- <td mat-cell *matCellDef="let element"> {{element[column]}} </td> -->

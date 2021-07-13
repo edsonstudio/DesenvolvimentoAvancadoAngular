@@ -1,11 +1,15 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { Filme } from './filme';
+import { ImageFormaterPipe } from './image.pipe';
 
 @Component({
 	selector: 'app-filmes',
 	templateUrl: './filmes.component.html',
 	styleUrls: ['./filmes.component.css'],
+	providers: [
+		ImageFormaterPipe
+	],
 	animations: [
 		trigger('detailExpand', [
 			state('collapsed', style({ height: '0px', minHeight: '0' })),
@@ -17,6 +21,9 @@ import { Filme } from './filme';
 export class FilmesComponent {
 
 	filmes: Filme[];
+	mapped: Filme[];
+
+	constructor(private imageformat: ImageFormaterPipe) {}
 
 	columnsToDisplay = ['nome', 'lancamento', 'valor', 'tamanho'];
 	expandedElement: Filme | null;
@@ -112,13 +119,24 @@ export class FilmesComponent {
 				descricao: 'Após a máfia matar sua família, o jovem Vito foge da sua cidade na Sicília e vai para a América. Vito luta para manter sua família. Ele mata Black Hand Fanucci, que exigia dos comerciantes uma parte dos seus ganhos. Com a morte de Fanucci, o poderio de Vito cresce, mas sua família é o que mais importa para ele. Agora baseado no Lago Tahoe, Michael planeja fazer incursões em Las Vegas e Havana instalando negócios ligados ao lazer, mas descobre que aliados como Hyman Roth estão tentando matá-lo.'
 			},
 			{
-				nome: 'Pulp Fiction: Tempo de Violência ',
-				lancamento: new Date('01/08/1994'),
-				valor: 190.00,
-				imagem: 'PulpFiction.jpg',
+				nome: 'Matadores de Vampiras Lésbicas',
+				lancamento: new Date('03/10/2009'),
+				valor: 1.99,
+				imagem: '',
 				tamanho: '773039680',
-				descricao: 'Os caminhos de vários criminosos se cruzam nestas três histórias de Quentin Tarantino. Um pistoleiro se apaixona pela mulher de seu chefe, um boxeador não se sai bem em uma luta e um casal tenta executar um plano de roubo que foge do controle.'
+				descricao: 'Numa pequena cidade rural do interior britânico, uma maldição ancestral aterroriza a todos, mas sobretudo os homens. É que as esposas deles são há séculos escravizadas por vampiras lésbicas. Isso até o dia em que chega ao local dois jovens desafortunados que serão oferecidos às vampiras como sacrifício.'
 			}
 		];
+
+		this.mapped = this.filmes.map(filme => {
+			return {
+				nome: filme.nome,
+				lancamento: filme.lancamento,
+				valor: filme.valor,
+				tamanho: filme.tamanho,
+				imagem: this.imageformat.transform(filme.imagem, 'default', true),
+				descricao: filme.descricao
+			}
+		});
 	}
 }

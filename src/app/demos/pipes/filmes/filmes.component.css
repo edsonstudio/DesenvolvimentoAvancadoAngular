@@ -9,6 +9,7 @@
 
 .container h1 {
     padding: 20px 0;
+    text-transform: uppercase;
 }
 
 .container .linhas p{
