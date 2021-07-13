@@ -18,6 +18,8 @@ import { DataBindingComponent } from './demos/data-binding/data-binding.componen
 import { ListaProdutoComponent } from './produtos/lista-produto/lista-produto.component';
 import { CardProductComponent } from './produtos/card-product/card-product.component';
 import { CadastroComponent } from './demos/reactiveForms/cadastro/cadastro.component';
+import { FilmesComponent } from './demos/pipes/filmes/filmes.component';
+import { FileSizePipe } from './demos/pipes/filmes/filesize.pipe';
 
 // ---------------Services---------------
 import { ProdutoService } from './produtos/produtos.service';
@@ -35,6 +37,7 @@ import { MatGridListModule} from '@angular/material/grid-list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
 
 // ---------------Sub-modules---------------
 import { NavegacaoModule } from './navegacao/navegacao.module';
@@ -52,7 +55,9 @@ import { CustomFormsModule } from 'ng2-validation';
     DataBindingComponent,
     ListaProdutoComponent,
     CardProductComponent,
-    CadastroComponent
+    CadastroComponent,
+    FilmesComponent,
+    FileSizePipe
   ],
   imports: [
     NavegacaoModule,
@@ -75,7 +80,8 @@ import { CustomFormsModule } from 'ng2-validation';
     TextMaskModule,
     CustomFormsModule,
     MatProgressSpinnerModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatTableModule
   ],
   providers: [
     ProdutoService,

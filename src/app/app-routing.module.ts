@@ -1,3 +1,4 @@
+import { FilmesComponent } from './demos/pipes/filmes/filmes.component';
 import { RegisterGuard } from './services/register.guard';
 import { NotFoundComponent } from './navegacao/not-found/not-found.component';
 import { NgModule } from '@angular/core';
@@ -15,6 +16,7 @@ const routes: Routes = [
 	{ path: 'home', component: HomeComponent },
 	{ path: 'contato', component: ContatoComponent },
 	{ path: 'sobre', component: SobreComponent },
+	{ path: 'filmes', component: FilmesComponent },
 	{ path: 'feature-data-binding', component: DataBindingComponent },
 	{ path: 'produtos', component: ListaProdutoComponent },
 	{ path: 'produto-detalhe/:id', component: ListaProdutoComponent },

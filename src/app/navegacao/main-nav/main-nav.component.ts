@@ -58,6 +58,13 @@ export class MainNavComponent {
 			admin: false
 		},
 		{
+			link:'/filmes',
+			name: 'Filmes',
+			icon: 'theaters',
+			exact: true,
+			admin: false
+		},
+		{
 			link:'/contato',
 			name: 'Contact',
 			icon: 'alternate_email',
