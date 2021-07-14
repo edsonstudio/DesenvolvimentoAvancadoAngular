@@ -1,5 +1,19 @@
 <div class="container">
     <h1>Lista de Tarefas</h1>
+    <div class="add-task">
+        <form novalidate (ngSubmit)="adicionarTarefa()" [formGroup]="tarefaForm">
+            <mat-form-field appearance="outline">
+                <mat-label>Adicionar tarefa</mat-label>
+                <input matInput id="nome" placeholder="Nova tarefa" formControlName="nome" type="text" required>
+                <mat-icon matSuffix>add_task</mat-icon>
+                <mat-hint>Digite o nome da tarefa</mat-hint>
+                <mat-error>*Nome da tarefa requerido!!!</mat-error>
+            </mat-form-field>
+            <button mat-raised-button color="primary" id="Registrar" type="submit">Adicionar<mat-icon >post_add</mat-icon></button>
+            <br><br>
+        </form>
+    </div>
+    <hr>
     <div class="content">
         <tasks></tasks>
         <tasks-iniciadas></tasks-iniciadas>

@@ -11,16 +11,19 @@
             </div>
             <div class="botoes">
                 <button mat-icon-button *ngIf="!item.finalizado && item.iniciado" class="task-list__finalizado" (click)="toggleItem(i, 'finalizar')">
-                    <mat-icon>stop</mat-icon>
+                    <mat-icon>task_alt</mat-icon>
                 </button>
                 <button mat-icon-button *ngIf="!item.finalizado && !item.iniciado" class="task-list__iniciado" (click)="toggleItem(i, 'iniciar')">
-                    <mat-icon>play_arrow</mat-icon>
+                    <mat-icon>play_circle_outline</mat-icon>
                 </button>
                 <button mat-icon-button *ngIf="item.finalizado && !item.iniciado" class="task-list__retroceder" (click)="toggleItem(i, 'retomar')">
                     <mat-icon>undo</mat-icon>
                 </button>
                 <button mat-icon-button *ngIf="!item.finalizado && item.iniciado" class="task-list__retroceder" (click)="toggleItem(i, 'cancelar')">
                     <mat-icon>undo</mat-icon>
+                </button>
+                <button mat-icon-button class="task-list__retroceder" (click)="excluir(item.id)">
+                    <mat-icon>clear</mat-icon>
                 </button>
             </div>
         </div>

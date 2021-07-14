@@ -46,3 +46,29 @@
     align-items: flex-start;
     flex-wrap: wrap;
 }
+
+mat-form-field {
+    width: 100%;
+}
+
+.container .add-task {
+    width: 85%;
+    padding: 10px 10px 0px 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 5px;
+    background-color: rgba(252, 249, 249, 0.2);
+    box-shadow: 0 16px 24px 0 rgba(0, 0, 0, .2);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+.container .add-task form{ 
+    width: 100%;
+}
+
+.container .add-task button{ 
+    width: 150px;
+    margin-top: 10px;
+}

@@ -68,3 +68,16 @@
     background-color: var(--primary-color);
     color: #000;
 }
+
+hr {
+    border-top: 1px dashed var(--primary-color);
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+.msg-error {
+    font-size: x-small;
+    color: red;
+}

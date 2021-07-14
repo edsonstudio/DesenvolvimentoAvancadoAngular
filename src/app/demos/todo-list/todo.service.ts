@@ -36,4 +36,31 @@ export class TasksService {
       this.store.set('todolist', todolist);
     });
   }
+
+  adicionar(task: Task) {
+    this.http
+      .post('https://json-server-angular.herokuapp.com/todolist', task)
+      .subscribe(() => {
+
+      const value = this.store.value.todolist;
+
+      task.id = value.slice(-1).pop().id + 1
+      task.finalizado = false;
+      task.iniciado = false;
+
+      value.push(task);
+      this.store.set('todolist', value);
+    });
+  }
+
+  remover(id: number) {
+    this.http
+      .delete(`https://json-server-angular.herokuapp.com/todolist/${id}`)
+      .subscribe(() => {
+
+        const value = this.store.value.todolist.filter(item => item.id !==id);
+
+        this.store.set('todolist', value);
+      });
+  }
 }

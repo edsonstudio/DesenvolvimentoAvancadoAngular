@@ -1,3 +1,6 @@
+import { TasksService } from './todo.service';
+import { Task } from './task';
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoComponent implements OnInit {
 
-  constructor() { }
+  tarefaForm: FormGroup;
+  tarefa: Task;
 
-  ngOnInit(): void {
+  constructor(private fb: FormBuilder, private tasksService: TasksService) { }
+
+  adicionarTarefa() {
+    if(this.tarefaForm.dirty && this.tarefaForm.valid) {
+      this.tarefa = Object.assign({}, this.tarefa, this.tarefaForm.value);
+      this.tasksService.adicionar(this.tarefa);
+      this.tarefaForm.reset();
+    }
+  }
+
+  ngOnInit() {
+    this.tarefaForm = this.fb.group({
+      nome: [''],
+    });
   }
 
 }
