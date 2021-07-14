@@ -16,6 +16,8 @@ import { Store } from './todo.store';
 
 // ---------------Angular material---------------
 import {MatTableModule} from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 // ---------------Sub-modules---------------
 
@@ -33,7 +35,9 @@ import {MatTableModule} from '@angular/material/table';
   imports: [
     CommonModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    MatButtonModule,
+    MatIconModule
   ],
   exports: [
     TodoComponent,

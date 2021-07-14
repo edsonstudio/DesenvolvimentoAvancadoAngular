@@ -1,86 +1,70 @@
 .task-list {
-    margin: 20px;
+    width: 300px;
+    margin: 10px;
     padding: 10px;
+    border-radius: 5px;
     background-color: rgba(252, 249, 249, 0.2);
     box-shadow: 0 16px 24px 0 rgba(0, 0, 0, .2);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
 }
 
-.task-list h3 {
-    padding: 0px 40px;
+.task-list .table {
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.task-list .header-task {
+    background: var(--secondary-color-dark);
+    padding: 14px 0px;
     text-align: center;
+}
+
+.task-list .botoes {
+    display: flex;
+    flex-direction: row;
+}
+
+.task-list .nome-tarefa {
+    display: flex;
+}
+
+.task-list h3 {
     margin-bottom: 0px !important;
-    width: 204px;
-    height: 40px;
     font-weight: 500;
     color: #FFF;
-    padding-top: 12px;
     text-transform: uppercase;
-    background: var(--secondary-color-dark);
 }
 
 .task-list__finalizado {
-    width: 22px;
-    height: 20px;
-    position: absolute;
-    right: 20px;
     cursor: pointer;
-    background: url(/assets/parar_ativo.png) no-repeat 0 0;
-    background-size: 20px 20px;
 }
 
 .task-list__iniciado {
-    width: 22px;
-    height: 20px;
-    position: absolute;
-    right: 20px;
     cursor: pointer;
-    background: url(/assets/iniciar_ativo.png) no-repeat 0 0;
-    background-size: 20px 20px;
 }
 
 .task-list__retroceder {
-    width: 22px;
-    height: 20px;
-    position: absolute;
-    right: 50px;
     cursor: pointer;
-    background: url(/assets/retroceder_ativo.png) no-repeat 0 0;
-    background-size: 20px 20px;
 }
 
-.task-list li {
-    list-style-type: none !important;
-    position: relative;
-    padding: 10px 20px;
-}
-
-.task-list li:nth-child(2n) {
-    background: #f5f4f5;
-}
-
-.task-list li p {
-    font-size: 18px;
+.task-list .tarefa {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: start;
+    padding: 2px 0px 2px 10px;
     font-weight: 500;
 }
 
-.task-list li span {
-    color: #807d82;
-}
-
-tr:nth-child(even) {
+.task-list .table:nth-child(even) {
     background-color: rgba(0, 0, 0, .2);
 }
 
-td {
-    width: 280px;
-    text-align: center;
-    padding: 10px 0px;
-    font-weight: 500;
-}
-
-td:hover {
+.task-list .table:hover {
     background-color: var(--primary-color);
     color: #000;
 }

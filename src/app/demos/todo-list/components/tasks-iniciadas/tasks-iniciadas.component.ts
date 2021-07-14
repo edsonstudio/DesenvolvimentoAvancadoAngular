@@ -22,4 +22,8 @@ export class TasksIniciadasComponent implements OnInit {
     );   
   }
 
+  onToggle(event) {
+    this.tasksService.toggle(event);
+  }
+
 }

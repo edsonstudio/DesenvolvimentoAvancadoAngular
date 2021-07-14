@@ -14,14 +14,18 @@ export class TasksComponent implements OnInit, OnDestroy {
   todolist$: Observable<any[]>;
   subscription: Subscription;
 
-  constructor(private taskService: TasksService, private store: Store) { }
+  constructor(private tasksService: TasksService, private store: Store) { }
 
   ngOnInit() {
     this.todolist$ = this.store.getToDoList()
     .pipe(
       map(todolist => todolist.filter(task => !task.iniciado && !task.finalizado)));
     
-      this.subscription = this.taskService.getToDoList$.subscribe(); //para ativar o fluxo de dados
+      this.subscription = this.tasksService.getToDoList$.subscribe(); //para ativar o fluxo de dados
+  }
+
+  onToggle(event) {
+    this.tasksService.toggle(event);
   }
 
   ngOnDestroy() {
