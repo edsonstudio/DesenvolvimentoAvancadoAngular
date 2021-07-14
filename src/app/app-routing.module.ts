@@ -1,3 +1,4 @@
+import { TodoComponent } from './demos/todo-list/todo.component';
 import { BarComponent } from './demos/bar-di-zones/bar.component';
 import { FilmesComponent } from './demos/pipes/filmes/filmes.component';
 import { RegisterGuard } from './services/register.guard';
@@ -19,6 +20,7 @@ const routes: Routes = [
 	{ path: 'sobre', component: SobreComponent },
 	{ path: 'filmes', component: FilmesComponent },
 	{ path: 'bar', component: BarComponent },
+	{ path: 'todo', component: TodoComponent },
 	{ path: 'feature-data-binding', component: DataBindingComponent },
 	{ path: 'produtos', component: ListaProdutoComponent },
 	{ path: 'produto-detalhe/:id', component: ListaProdutoComponent },

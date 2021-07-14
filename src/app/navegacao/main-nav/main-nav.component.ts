@@ -72,6 +72,13 @@ export class MainNavComponent {
 			admin: false
 		},
 		{
+			link:'/todo',
+			name: 'To-Do',
+			icon: 'playlist_add_check',
+			exact: true,
+			admin: false
+		},
+		{
 			link:'/contato',
 			name: 'Contact',
 			icon: 'alternate_email',
@@ -81,7 +88,7 @@ export class MainNavComponent {
 		{
 			link:'/feature-data-binding',
 			name: 'Features',
-			icon: 'fact_check',
+			icon: 'settings_suggest',
 			exact: true,
 			admin: false
 		},
