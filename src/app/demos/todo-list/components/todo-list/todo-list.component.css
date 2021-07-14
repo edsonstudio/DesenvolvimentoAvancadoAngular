@@ -1,20 +1,23 @@
 .task-list {
-    /* background: #fff; */
-    box-shadow: 0 16px 24px 0 rgba(0, 0, 0, .2);
-    /* border-radius: 4px; */
+    margin: 20px;
     padding: 10px;
+    background-color: rgba(252, 249, 249, 0.2);
+    box-shadow: 0 16px 24px 0 rgba(0, 0, 0, .2);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
 }
 
 .task-list h3 {
-    background: var(--primary-color);
     padding: 0px 40px;
     text-align: center;
     margin-bottom: 0px !important;
-    width: 220px;
+    width: 204px;
+    height: 40px;
     font-weight: 500;
-    color: #000;
+    color: #FFF;
+    padding-top: 12px;
+    text-transform: uppercase;
+    background: var(--secondary-color-dark);
 }
 
 .task-list__finalizado {
@@ -64,4 +67,20 @@
 
 .task-list li span {
     color: #807d82;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, .2);
+}
+
+td {
+    width: 280px;
+    text-align: center;
+    padding: 10px 0px;
+    font-weight: 500;
+}
+
+td:hover {
+    background-color: var(--primary-color);
+    color: #000;
 }
