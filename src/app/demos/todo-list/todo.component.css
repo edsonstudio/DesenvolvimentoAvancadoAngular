@@ -42,8 +42,8 @@
     position: relative;
     z-index: 10;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     flex-wrap: wrap;
     padding: 0px 10px;
 }

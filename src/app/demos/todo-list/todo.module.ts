@@ -12,6 +12,7 @@ import { TasksFinalizadasComponent } from './components/tasks-finalizadas/tasks-
 
 // ---------------Services---------------
 import { TasksService } from './todo.service';
+import { Store } from './todo.store';
 
 // ---------------Angular material---------------
 import {MatTableModule} from '@angular/material/table';
@@ -42,7 +43,8 @@ import {MatTableModule} from '@angular/material/table';
     TodoListComponent
   ],
   providers: [
-    TasksService
+    TasksService,
+    Store
   ]
 })
 export class TodoModule { }
