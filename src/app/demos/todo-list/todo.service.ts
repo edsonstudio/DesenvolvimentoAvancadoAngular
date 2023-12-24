@@ -11,7 +11,8 @@ export class TasksService {
   constructor(private http: HttpClient, private store: Store) { }
 
   getToDoList$: Observable<Task[]> = this.http
-  .get<Task[]>('https://json-server-angular.herokuapp.com/todolist')
+  // .get<Task[]>('https://json-server-angular.herokuapp.com/todolist')
+  .get<Task[]>('https://flicker-acoustic-century.glitch.me/todolist')
   .pipe(
     tap(next => this.store.set('todolist', next)));
 
@@ -21,7 +22,8 @@ export class TasksService {
 
   toggle(event: any) {
     this.http
-    .put(`https://json-server-angular.herokuapp.com/todolist/${event.task.id}`, event.task)
+    // .put(`https://json-server-angular.herokuapp.com/todolist/${event.task.id}`, event.task)
+    .put(`https://flicker-acoustic-century.glitch.me/todolist/${event.task.id}`, event.task)
     .subscribe(() => {
       const value = this.store.value.todolist;
 
@@ -39,7 +41,8 @@ export class TasksService {
 
   adicionar(task: Task) {
     this.http
-      .post('https://json-server-angular.herokuapp.com/todolist', task)
+      // .post('https://json-server-angular.herokuapp.com/todolist', task)
+      .post('https://flicker-acoustic-century.glitch.me/todolist', task)
       .subscribe(() => {
 
       const value = this.store.value.todolist;
@@ -55,7 +58,8 @@ export class TasksService {
 
   remover(id: number) {
     this.http
-      .delete(`https://json-server-angular.herokuapp.com/todolist/${id}`)
+      // .delete(`https://json-server-angular.herokuapp.com/todolist/${id}`)
+      .delete(`https://flicker-acoustic-century.glitch.me/todolist/${id}`)
       .subscribe(() => {
 
         const value = this.store.value.todolist.filter(item => item.id !==id);
